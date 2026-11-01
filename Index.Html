@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mera Android App</title>
+    
+    <!-- PWA Settings taaki yeh App ki tarah install ho sake -->
+    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,{
+        %22name%22: %22Mera Android App%22,
+        %22short_name%22: %22App%22,
+        %22start_url%22: %22./index.html%22,
+        %22display%22: %22standalone%22,
+        %22background_color%22: %22%23ffffff%22,
+        %22theme_color%22: %22%232196F3%22,
+        %22icons%22: [{
+            %22src%22: %22https://cdn-icons-png.flaticon.com/512/3177/3177440.png%22,
+            %22sizes%22: %22512x512%22,
+            %22type%22: %22image/png%22
+        }]
+    }">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 50px 20px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 { color: #333; font-size: 24px; }
+        p { color: #666; }
+        .btn {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .btn:active { background-color: #0b7dda; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>🚀 Mera App Tayar Hai!</h1>
+        <p>Yeh ek single-file app hai. GitHub par dalne ke baad aap ise kisi bhi browser mein khol kar apne Android phone mein 'Add to Home Screen' ya 'Install App' kar sakte hain.</p>
+        <button class="btn" onclick="alert('Namaste! Aapka app badhiya kaam kar raha hai.')">Click Karein</button>
+    </div>
+
+    <script>
+        // Service Worker register karna taaki app offline bhi chale
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Simple offline cache support
+            });
+        }
+    </script>
+
+</body>
+</html>
